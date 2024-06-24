@@ -37,7 +37,7 @@ DEFAULT_TEXT.set("score", TRACKED_ELEMENTS.get("score").innerText);
 
 
 //create elements to be inserted later
-const finalWinner = document.createElement("p");
+let finalWinner = document.createElement("p");
 finalWinner.setAttribute("id", "finalWinner");
 
 const resetButton = document.createElement("button");
@@ -71,18 +71,6 @@ function playRound(humanChoice) {
     TRACKED_ELEMENTS.get("humanChoice").innerText = "You chose: " + humanChoice;
     TRACKED_ELEMENTS.get("computerChoice").innerText = "The Computer chose: " + computerChoice;
     TRACKED_ELEMENTS.get("countdown").innerText = "Round " + currentRound;
-
-    if(currentRound === 5) {
-      if(humanScore > computerScore) {
-        finalWinner.innerText = WIN_MESSAGES["final"];
-      } else if (humanScore < computerScore) {
-        finalWinner.innerText = LOSE_MESSAGES["final"];
-      } else {
-        finalWinner.innerText = TIE_MESSAGE_FINAL;
-      }
-      output.appendChild(finalWinner);
-      output.appendChild(resetButton);
-    }
 
     currentRound++;
 
@@ -134,6 +122,17 @@ function playRound(humanChoice) {
         break;
     }
     TRACKED_ELEMENTS.get("score").innerText = "You: " + humanScore + ", Computer: " + computerScore;
+    if(currentRound === 6) {
+      if(humanScore > computerScore) {
+        finalWinner.innerText = WIN_MESSAGES["final"];
+      } else if (humanScore < computerScore) {
+        finalWinner.innerText = LOSE_MESSAGES["final"];
+      } else {
+        finalWinner.innerText = TIE_MESSAGE_FINAL;
+      }
+      output.appendChild(finalWinner);
+      output.appendChild(resetButton);
+    }
   }
 }
 
