@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
   <script src="javascript.js" defer></script>
 </head>
 <body>
   <div id="headerWrapper">
-    <p id="header">Rock, Paper, Scissors</p>
+    <p class="header">Rock, Paper, Scissors</p>
     <p id="info">Click on a button to pick your move, rock, paper, or scissors. A computer
       will randomly pick between the moves to oppose your choice. Rock beats scissors,
       paper beats rock, and scissors beats paper. Five games will be played, a winner
@@ -23,9 +24,11 @@
   </div>
 
   <div id="outputWrapper">
-    <p id="computerChoice">The Computer's choice will show up here.</p>
-    <p id="humanChoice">Your choice will show up here.</p>
-    <p id="winner">This is where the winner will be announced.</p>
+    <div id="gameOutputWrapper">
+      <p id="computerChoice">The Computer's choice will show up here.</p>
+      <p id="humanChoice">Your choice will show up here.</p>
+      <p id="winner">This is where the winner will be announced.</p>
+    </div>
     <p id="countdown">Round 1</p>
     <p id="score">You: 0, Computer: 0</p>
   </div>
